@@ -15,6 +15,7 @@ form select {
     margin: 5px;
     border: transparent;
     border-radius: 10px;
+    width: 400px;
 }
 
 form select option:checked{
@@ -190,4 +191,32 @@ progress {
 ::-webkit-progress-value{
     background-color: #133257;
     border-radius: 30px;
+}
+
+@media screen and (max-width: 600px) {
+    #typedebien{
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    #typedebien > :first-child{
+        grid-column: span 1;
+        width: 100%;
+    }
+    form select {
+        padding: 5px;
+        font-size: 12pt;
+        margin: 5px;
+        border: transparent;
+        border-radius: 10px;
+        width: 300px;
+    }
+    .suiv_prec{
+        margin-bottom: 55px;
+    }
+
+    #adresse{
+        flex-direction: column;
+    }
 }
