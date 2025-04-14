@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>RechercheImmo</title>
+<link href="{{ url_for('static', filename='index.css') }}" rel="stylesheet">
+
+{% include "menu.html" %}
+
+<!--titre et formulaire en fonction du menu-->
+<section class="bienvenue titre" style="display: flex; justify-content: center; align-items: center; width: 75%; margin-left:calc(50% - (75%/2)) ; flex-direction: column; margin-top: 10px">
+    <h1 style="text-align: center; font-family: Tahoma; font-size: 36pt">Bienvenue chez Recherche Immo !</h1>
+    <p style="text-align: justify; font-size: 22pt; font-family: Calibri;">
+        Ici, on croit que trouver un bien immobilier ne devrait jamais être un parcours du combattant. Que vous cherchiez un nouveau chez-vous ou un investissement, notre mission est simple : vous mettre en relation avec les bons professionnels, ceux qui vous écoutent, vous conseillent et vous accompagnent vraiment.
+        Décrivez ce que vous cherchez, et laissez-nous vous connecter à des experts de confiance, proches de chez vous, qui connaissent le marché sur le bout des doigts.
+        Parce que votre projet mérite plus qu’un algorithme : il mérite une vraie rencontre. Vous recherchez :
+    </p>
+    <div id="boitebouton">
+        <button onclick="window.location.href = '/form/appartement';">Appartement</button>
+        <button onclick="window.location.href = '/form/villa';">Villa</button>
+        <button onclick="window.location.href = '/form/bureau_et_commerce';">Bureau et Commerce</button>
+        <button onclick="window.location.href = '/form/autre';">Autre</button>
+    </div>
+</section>
+
+</body>
+</html>

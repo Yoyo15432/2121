@@ -1,0 +1,340 @@
+/*Tous fichier ayant recherche immo, aura ce style */
+body {
+    background-color: #0e4b77;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-position: 50% 50%;
+    background-position: 60%;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+button {
+    cursor: pointer;
+}
+input[type="button"]{
+    cursor: pointer;
+}
+
+/*css pour le menu (barre noir)*/
+.barre{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 4;
+    background: white;
+    color: black;
+}
+
+.barre > ul {
+    list-style: none;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    flex-wrap: nowrap;
+    font-size: 16pt;
+    white-space:  nowrap;
+}
+.barre > ul >li, .boitecompte > li {
+    padding-left:4%;
+    padding-right: 4%;
+    cursor: pointer;
+    transition: font-size 500ms ease-in-out;
+}
+.barre ul > li > a {
+    color: black;
+    text-decoration: none;
+}
+.boitecompte{
+    background-color: #0e4b77;
+    border-radius: 10px;
+}
+.boitecompte >li > a, .boitecompte >li{
+    color: white;
+}
+
+.boitecompte:hover .sousliste{
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.barre > ul >li:hover, .boitecompte > li:hover {
+    font-size: 24pt;
+}
+
+.sousliste {
+    display: flex;
+    position: absolute;
+    top: 80px;
+    flex-direction: column;
+    background-color: cornflowerblue;
+    border-radius: 20px;
+    padding: 10px;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.sousliste>a{
+    color: white;
+    text-decoration-line: none;
+}
+
+.sousliste>a>li{
+    padding: 10px;
+    cursor: pointer;
+}
+
+.sousliste>a>li:hover{
+    background-color: #131375;
+    border-radius: 20px;
+}
+
+/*fin du css pour le menu (barre noir)*/
+
+
+
+/*css pour la page d'accueil*/
+#boitebouton{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#boitebouton > button{
+    padding: 20px;
+    width: 100%;
+    background-color: #346b98;
+    border: none;
+    transition: box-shadow 0.4s;
+    color: white;
+    font-size: 16pt;
+    border-radius: 5px;
+}
+
+#boitebouton > button:hover{
+    box-shadow: 4px 6px 17px 1px rgba(0,0,0,0.5);
+    transition: box-shadow 0.4s;
+}
+/*fin du css pour la page d'accueil*/
+
+/*css google */
+ .material-symbols-outlined {
+     margin-right: 5px;
+     font-variation-settings:
+             'FILL' 0,
+             'wght' 500,
+             'GRAD' -25,
+             'opsz' 48
+ }
+/*fin css google */
+
+/*css pour le titre :*/ /*aussi utilisé par d'autre route pour permettre de bien placer le texte*/
+.titre{
+position : absolute;
+top : 105px;
+width : 100%;
+color : white;
+}
+/*fin de css pour le titre*/
+
+/*css pour les formulaires :*/
+    /*css sur le selection (les rectangles pour choisir)*/
+        form select {
+            font-family: 'Times New Roman';
+            background-color: #3a3a40;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            font-size: 14pt;
+            margin: 5px;
+            border: transparent;
+            border-radius: 10px;
+        }
+
+        form select option:checked{
+            background-color: #918a8a;
+        }
+
+        form label{
+            color: white;
+        }
+
+    /*pour tous les formulaires*/
+        .formulaire {
+            position: absolute;
+            top: 160px;
+            margin-top: 10px;
+            width: calc(100% - 15px);
+            font-size: 14pt;
+        }
+
+    /*type appartement*/
+
+        #vente_loc{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 15px auto 25px;
+        }
+
+        #typedebien{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-columns: 1fr;
+            text-align: center;
+            gap: 5px;
+        }
+
+        #typedebien > :nth-child(n+2){
+            background: #346b98;
+            padding: 20px;
+            border: solid black;
+            cursor: pointer;
+            color: white;
+
+        }
+        #typedebien > :first-child{
+            grid-column: span 4;
+            width: 100%;
+        }
+
+        /*pour le nombre de chambres*/
+        .nc{
+            display: flex;
+            flex-wrap:wrap;
+            color: white;
+            font-family: "Times New Roman";
+            font-size: 14pt;
+            gap: 10px;
+        }
+
+
+        /*style pays et ville*/
+        #adresse{
+            display: flex;
+            width: 100%;
+            background-color: black;
+            opacity: 60%;
+            flex-direction: row;
+            justify-content: space-evenly;
+            font-size:18pt;
+        }
+
+        #adresse > div{
+            margin: 10px;
+        }
+        #adresse > div:nth-child(n){
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+
+        /* style des barres des choix des prix*/
+        #prixactu{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #prixactu>label{
+            flex: 100px;
+            flex-grow: revert;
+            margin: 10px;
+        }
+
+        #form2 div > h4{
+            width: 100%;
+            text-align: center;
+            color: white;
+        }
+
+        input[name='prix_min']{
+            width: 30%;
+            transform: rotate(180deg);
+            margin: 0;
+
+        }
+        input[name='prix_max']{
+            width: 30%;
+            left: calc(30% + 0px);
+            margin: 0;
+        }
+
+        /*style de la partie détail*/
+        textarea{
+           background-color: #afc2f3;
+            border-radius: 5px;
+            border: #3f60ba;
+            margin-top: 5px;
+            resize: none;
+            margin-top: 5px;
+        }
+
+        /*style des bloc de formulaire 2*/
+        .bloc_form{
+            border-radius: 10px;
+            border: solid 1px #232547;
+            position: relative;
+            width: 50%;
+            left: 25%;
+            box-shadow: 3px 4px 16px 1px rgba(0,0,0,0.62);
+            background-color: #264972;
+            background-clip: padding-box;
+            margin:25px 0;
+
+
+        }
+
+/* style du boutton precedent et suivant*/
+        .suiv_prec{
+            display: flex;
+            width: 98%;
+            padding: 10px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            gap: 5px;
+        }
+        .suiv_prec > input{
+            padding: 10px 50px 10px;
+        }
+
+        /*barre de progression*/
+        progress {
+            position: fixed;
+            bottom: 20px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 98%;
+            height:30px;
+            border-radius: 30px;
+        }
+
+        ::-webkit-progress-bar {
+            background-color: #b4bedc;
+            border-radius: 30px;
+        }
+        ::-moz-progress-bar{
+            background-color: white;
+            border-radius: 30px;
+        }
+
+        ::-webkit-progress-value{
+            background-color: #133257;
+            border-radius: 30px;
+        }
+
+
+
+

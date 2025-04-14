@@ -1,0 +1,34 @@
+detail_bien.html (inclus menu)
+  |
+  |__historique_et_profil_du_client.css
+
+
+historique_du_client.html (inclus menu)
+  |
+  |__historique_et_profil_du_client.css
+  |
+  |__historique_et_profil_du_client.js
+
+
+rechercheimmo.html (inclus menu)
+|
+|
+|______rechercheimmo2.css
+|
+|______rechercheimmo.js
+|
+|______formulairerecherche.js
+|
+|______gerer_tous_les_click_et_selection.js
+
+
+recherche_pour_lagence (inclus menu)
+|
+|______recherche_pour_lagence.css
+|
+|______recherche_pour_lagence.js
+|
+|______rechercheimmo2.cs
+|
+|______gerer_tous_les_click_et_selection.js
+
