@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Historique</title>
+        <link href="{{ url_for('static', filename='historique_et_profil_du_client.css') }}" rel="stylesheet">
+        <script type="text/javascript" src="{{ url_for('static', filename='historique_et_profil_du_client.js') }}" defer></script> <!--pour le flask{{ url_for('static', filename='rechercheimmo.js') }}--> <!--le script est téléchargé en parallèle de l'analyse de la page et exécuté une fois l'analyse de la page terminée ') }}-->
+
+
+        {% include "menu.html" %}
+
+
+<section class="titre"><h1>Vos recherches de bien</h1></section>
+<section class="s_historique">
+
+        {%for i in historique%}
+        <div class="boite_historique" data-id="{{ i[0] }}">
+                <h4>Type : {{i[2]}}</h4>
+                <p>Je recherche un/une {{ i[2] }} à un prix allant de {{ "{:,}".format(i[3]).replace(",", " ") }} € jusqu'à {{ "{:,}".format(i[4]).replace(",", " ") }} €</p> <!-- remarque: "{:,}".format(i[4]).replace(",", " ") mets des virgule dans l'entier entre les milliers puis les remplace avec un espace -->
+                <p>Le bien que je recherche dois se trouver à {{i[7]}}({{i[9]}}), {{i[8]}}</p>
+        </div>
+
+        {%endfor%}
+        {{bien}}
+</section>
+</body>
+</html>

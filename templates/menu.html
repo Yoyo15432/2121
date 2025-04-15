@@ -1,0 +1,38 @@
+<link href= "{{ url_for('static', filename='menu.css') }}" rel="stylesheet"> <!--pour le flask : {{ url_for('static', filename='rechercheimmo.css') }}-->
+<link rel="shortcut icon" href="{{ url_for('static', filename='RechecheImmo2.ico') }}" type="image/x-icon"> <!--l'icone-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle" />
+</head>
+<body>
+<!--le menu-->
+<section class="barre">
+    <ul>
+        <img style="width:115px; height:90px; border-radius: 5px; user-select: none; pointer-events: none" src="{{ url_for('static', filename='RechecheImmo2.png') }}" />
+        <li><a href="/" {%if accueil_test %} style="color: #4065c6" {%endif%}>Accueil</a></li> <!--style="color: orange"-->
+        <li><a href="/form/appartement">Appartement</a></li>
+        <li><a href="/form/villa">Villa</a></li>
+        <li><a href="/form/bureau_et_commerce">Bureau et Commerce</a></li>
+        <li><a href="/form/autre">Autre</a></li>
+        {% if is_login=="True" or is_login_agence=="True" %}
+        <div class="boitecompte" style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 12px;">
+            <li><a href="/mon_profil" style=" text-decoration: none; display: grid; align-items: center; grid-auto-flow: column"><span class="material-symbols-outlined">account_circle</span>Mon compte</a></li>
+            <div class="sousliste">
+                <a href="/mon_profil"><li>Mon profil</li></a>
+                {% if is_login=="True"%}<a href="/historique"><li>Mes recherches</li></a>{%endif%}
+                {% if is_login_agence=="True"%}<a href="/search"><li>Rechercher un client</li></a>{%endif%}
+                <a href="/logout"><li>se déconnecter</li></a>
+            </div>
+        </div>
+
+        {%else%}
+        <div class="boitecompte" style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 12px;">
+            <li style="display: flex;flex-direction: row; align-items: center"><span class="material-symbols-outlined">account_circle</span>Compte</li>
+            <div class="sousliste">
+                <a href="/login=ok"><li>se connecter</li></a>
+                <a href="/new_user=client"><li>creer un compte</li></a>
+            </div>
+        </div>
+
+        {%endif%}
+    </ul>
+</section>
+<!--fin du menu-->

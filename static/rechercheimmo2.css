@@ -1,0 +1,222 @@
+::selection{
+    background-color: #0c3551;
+    color: white;
+}
+
+/*css pour les formulaires :*/
+/*css sur le selection (les rectangles pour choisir)*/
+form select {
+    font-family: 'Times New Roman';
+    background-color: #3a3a40;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    font-size: 14pt;
+    margin: 5px;
+    border: transparent;
+    border-radius: 10px;
+    width: 400px;
+}
+
+form select option:checked{
+    background-color: #918a8a;
+}
+
+form label{
+    color: white;
+}
+
+/*pour tous les formulaires*/
+.formulaire {
+    position: absolute;
+    top: 160px;
+    margin-top: 10px;
+    width: calc(100% - 15px);
+    font-size: 14pt;
+}
+
+/*type appartement*/
+
+#vente_loc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px auto 25px;
+}
+
+#typedebien{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-columns: 1fr;
+    text-align: center;
+    gap: 5px;
+}
+
+#typedebien > :nth-child(n+2){
+    background: #346b98;
+    padding: 20px;
+    border: solid black;
+    cursor: pointer;
+    color: white;
+    user-select: none;
+
+}
+#typedebien > :first-child{
+    grid-column: span 4;
+    width: 100%;
+}
+
+/*pour le nombre de chambres*/
+.nc{
+    display: flex;
+    flex-wrap:wrap;
+    color: white;
+    font-family: "Times New Roman";
+    font-size: 14pt;
+    gap: 10px;
+}
+
+
+/*style pays et ville*/
+#adresse{
+    display: flex;
+    width: 100%;
+    background-color: black;
+    opacity: 60%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size:18pt;
+}
+
+#adresse > div{
+    margin: 10px;
+}
+#adresse > div:nth-child(n){
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+/* style des barres des choix des prix*/
+#prixactu{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#prixactu>label{
+    flex: 100px;
+    flex-grow: revert;
+    margin: 10px;
+}
+
+#form2 div > h4{
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+input[name='prix_min']{
+    width: 30%;
+    transform: rotate(180deg);
+    margin: 0;
+
+}
+input[name='prix_max']{
+    width: 30%;
+    left: calc(30% + 0px);
+    margin: 0;
+}
+
+/*style de la partie détail*/
+textarea{
+    background-color: #afc2f3;
+    border-radius: 5px;
+    border: #3f60ba;
+    margin-top: 5px;
+    resize: none;
+    margin-top: 5px;
+}
+
+/*style des bloc de formulaire 2*/
+.bloc_form{
+    border-radius: 10px;
+    border: solid 1px #232547;
+    position: relative;
+    width: 50%;
+    left: 25%;
+    box-shadow: 3px 4px 16px 1px rgba(0,0,0,0.62);
+    background-color: #264972;
+    background-clip: padding-box;
+    margin:25px 0;
+
+
+}
+
+/* style du boutton precedent et suivant*/
+.suiv_prec{
+    display: flex;
+    width: 98%;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 5px;
+}
+.suiv_prec > input{
+    padding: 10px 50px 10px;
+}
+
+/*barre de progression*/
+progress {
+    position: fixed;
+    bottom: 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 98%;
+    height:30px;
+    border-radius: 30px;
+}
+
+::-webkit-progress-bar {
+    background-color: #b4bedc;
+    border-radius: 30px;
+}
+::-moz-progress-bar{
+    background-color: white;
+    border-radius: 30px;
+}
+
+::-webkit-progress-value{
+    background-color: #133257;
+    border-radius: 30px;
+}
+
+@media screen and (max-width: 600px) {
+    #typedebien{
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    #typedebien > :first-child{
+        grid-column: span 1;
+        width: 100%;
+    }
+    form select {
+        padding: 5px;
+        font-size: 12pt;
+        margin: 5px;
+        border: transparent;
+        border-radius: 10px;
+        width: 300px;
+    }
+    .suiv_prec{
+        margin-bottom: 55px;
+    }
+
+    #adresse{
+        flex-direction: column;
+    }
+}

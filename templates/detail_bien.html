@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Détail du bien</title>
+    <link href="{{ url_for('static', filename='historique_et_profil_du_client.css') }}" rel="stylesheet">
+
+    {% include "menu.html" %}
+
+
+
+<section class="titre"><h1>Détail du bien</h1></section>
+<section class="s_historique">
+    <div class="boite_historique" style="height: 100%; cursor: auto">
+        <h1 style="font-size: 20pt">Le client recherche :</h1>
+        <p style="font-size: 14pt">un/une <span class="focus">{{bien[1]}}</span> de type <span class="focus">{{bien[2]}}</span></p>
+        <h1>Le budget du client</h1>
+        <p style="font-size: 14pt">Le budget du client peut aller de <span class="focus">{{ "{:,}".format(bien[3]).replace(",", " ") }} €</span> à <span class="focus">{{ "{:,}".format(bien[4]).replace(",", " ") }} €</span></p>
+        <h1>Adresse :</h1>
+        <p>{{bien[8]}}, {{bien[9]}} {{bien[7]}}</p>
+        <iframe
+                width="450"
+                height="250"
+                frameborder="0" style="border:0; margin-left: calc(50% - 450px/2)"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBbTbfGyazq-L3oBLfZi5trN_CMbHDzt7E&q={{bien[8]}}+{{bien[9]}},{{bien[7]}}"
+                allowfullscreen>
+        </iframe>
+        <h1>Nombre de chambres que le client demande :</h1>
+        <p>Le client demande <span class="focus" style="text-decoration: none">{{bien[5].replace(",", " ou ")}}</span> chambre(s)</p>
+        <h1>Détail supplémentaire fournit par le client :</h1>
+        <div style="border: solid 1px black; border-radius: 10px">
+            <pre>
+                {{bien[6]}}
+            </pre>
+        </div>
+        {% if is_login_agence=="True" and not info%}
+        <form action="/contacter/{{bien[0]}}" method="post" style="display: flex">
+            <input type="submit" id="demande_autorisation" value="demander accès au info du client">
+        </form>
+        {% endif %}
+        {%if info %}
+        <h1>Vous avez désormais accès aux infos du client :</h1>
+        <p>Nom du client : <span class="focus">{{info_client[0]}}</span></p>
+        <p>Prénom du client : <span class="focus">{{info_client[1]}}</span></p>
+        <p>Numéro de téléphone de client : <span class="focus">{{info_client[2]}}</span></p>
+        {% endif %}
+    </div>
+</section>
+</body>
+</html>
